@@ -12,7 +12,8 @@ const appRoutes: Routes = [
     loadChildren: () => import('./favorite-authors/favorite-authors.module').then(m => m.FavoriteAuthorsModule)
   }, {
     path: 'longest-repeatition', component: LongestRepeationLettersComponent
-  }
+  },
+  { path: '',   redirectTo: '/authors', pathMatch: 'full' }
 ];
 
 @NgModule({
