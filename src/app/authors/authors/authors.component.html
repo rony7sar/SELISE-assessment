@@ -1,0 +1,6 @@
+<br>
+<div style="height: 700px;">    
+    <app-list-item [authors]="authors" (onAddFavorite)="addFavoriteAuthor($event)" (onRemoveFavorite)="removeFavoriteAuthor($event)"></app-list-item>
+</div>
+
+<app-pagination [limit]="limit" [skip]="skip" [pageNumber]="pageNumber" (onGetMore)="getMoreAuthors($event)"></app-pagination>

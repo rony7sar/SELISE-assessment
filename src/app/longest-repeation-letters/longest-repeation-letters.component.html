@@ -1,0 +1,14 @@
+<br>
+<div class="col-sm-4">    
+    <label for="longest_repeatition">Type a string to know the longest repeatition:</label>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Type here" id="longest_repeatition" (focus)="longestRepeatition = '';"
+      (blur)="getLongestRepeatition(inputText.value)" #inputText>
+      <div class="input-group-append">
+        <button class="btn btn-success" type="button" (click)="getLongestRepeatition(inputText.value)">Result</button>
+      </div>
+    </div>
+</div>
+<div class="col-sm-4" *ngIf="longestRepeatition.length">
+    The longest repeated letter{{ longestRepeatition.length == 1 ? '' : 's' }} {{ longestRepeatition.length == 1 ? 'is' : 'are' }} {{ longestRepeatition }}.
+</div>

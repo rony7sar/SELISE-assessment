@@ -1,0 +1,5 @@
+
+<div class="text-center">
+    <button type="button" class="btn btn-outline-primary" style="margin-right: 10px;" (click)="getMore(false)" [disabled]="skip ? (skip <= limit) : false">prev</button>Page {{ pageNumber }}
+    <button type="button" class="btn btn-outline-primary" style="margin-left: 10px;" (click)="getMore()" [disabled]="!skip">next</button>
+</div>

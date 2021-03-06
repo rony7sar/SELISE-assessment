@@ -1,0 +1,9 @@
+<br>
+<div style="height: 700px;">
+    <div *ngIf="!favoriteAuthors.length">You don't have any favorite author yet. Please add some.</div>
+    <app-list-item [authors]="favoriteAuthors" (onRemoveFavorite)="removeFavoriteAuthor($event)"></app-list-item>
+</div>
+
+<div *ngIf="allFavoriteAuthors.length > limit">    
+    <app-pagination [limit]="limit" [skip]="skip" [pageNumber]="pageNumber" (onGetMore)="getMoreAuthors($event)"></app-pagination>
+</div>

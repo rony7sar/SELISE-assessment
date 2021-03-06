@@ -1,0 +1,21 @@
+<!-- <a routerLink="/detail/{{hero.id}}">
+  <span class="badge">{{author._id}}</span> {{author.name}}
+</a> -->
+<!-- <button class="delete" title="delete author"
+  (click)="delete(author)">x</button> -->
+
+
+<div class="d-flex flex-wrap">
+  <div class="card m-1" style="width: 30%;" *ngFor="let author of authors; let i=index;">
+    <div class="card-header">
+      <a class="btn" href="{{ author.link }}" role="button">{{ author.name }}</a>
+      <ng-template [ngIf]="!author.favorite">
+        <button type="button" class="btn float-right" (click)="addFavorite(i)">Add Favorite</button>
+      </ng-template>
+      <ng-template [ngIf]="author.favorite">
+        <button type="button" class="btn float-right" (click)="removeFavorite(i)">Remove Favorite</button>
+      </ng-template>
+    </div>
+    <div class="card-body">{{ author.bio }}</div>
+  </div>
+</div>
